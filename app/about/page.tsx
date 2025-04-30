@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Terminal } from "@/components/terminal"
+import { Timeline } from "@/components/timeline"
 import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 import Link from "next/link"
 
@@ -11,23 +12,22 @@ export default function AboutPage() {
 
   const experiences = [
     {
+      year: "Mar 2025 - Present",
       title: "CEO & Founder",
       company: "Vision Solve AI",
-      period: "Mar 2025 - Present",
       description: "After winning ITRIX '25, engaged with users to build an AI video generation platform with a comprehensive study ecosystem including quizzes, mindmaps, and other features. Currently preparing for public release.",
     },
     {
+      year: "Feb 2025 - Mar 2025",
       title: "System Designer",
       company: "Sixth Sense AI",
-      period: "Feb 2025 - Mar 2025",
-      description: "Designed architectures, reviewed code, and led technical planning for AI systems.We have kept this at pause to focus on Vision Solve AI.",
+      description: "Designed architectures, reviewed code, and led technical planning for AI systems. We have kept this at pause to focus on Vision Solve AI.",
     },
     {
+      year: "Dec 2024 - Mar 2025",
       title: "Front-End Developer & Prompt Engineer",
       company: "AI Sentiment Analysis",
-      period: "Dec 2024 - Mar 2025",
-      description:
-        "Developed cross-platform UIs using TypeScript, Next.js, and Tailwind CSS for sentiment analysis applications.",
+      description: "Developed cross-platform UIs using TypeScript, Next.js, and Tailwind CSS for sentiment analysis applications.",
     },
   ]
 
@@ -48,7 +48,7 @@ export default function AboutPage() {
     },
     {
       name: "Nexathon 2025",
-      project: "AI Voice Assistant",
+      project: "Sixth Sense AI Voice Assistant",
       venue: "VIT Chennai",
       achievement: "Semi-Finalist",
     },
@@ -64,6 +64,13 @@ export default function AboutPage() {
       venue: "CEG",
       achievement: "Special Mention",
     },
+    {
+      name: "Sparkathon 2024",
+      project: "Healthcare system with AI ",
+      venue: "CEG",
+      achievement: "Runners Up",
+    },
+
   ]
 
   const skills = [
@@ -139,33 +146,19 @@ export default function AboutPage() {
 
           <section>
             <h2 className="text-2xl font-bold mb-6">Experience Timeline</h2>
-            <div className="space-y-6">
-              {experiences.map((exp, index) => (
-                <div key={index} className="terminal-window">
-                  <div className="terminal-header">
-                    <div className="terminal-button terminal-button-red"></div>
-                    <div className="terminal-button terminal-button-yellow"></div>
-                    <div className="terminal-button terminal-button-green"></div>
-                    <div className="terminal-title">{exp.company}.sh</div>
-                  </div>
-                  <div className="terminal-content">
-                    <p className="mb-1">
-                      <span className="text-primary">$</span> cat job_details.txt
-                    </p>
-                    <div className="mb-2">
-                      <p>
-                        <span className="text-primary">title:</span> {exp.title}
-                      </p>
-                      <p>
-                        <span className="text-primary">period:</span> {exp.period}
-                      </p>
-                      <p>
-                        <span className="text-primary">description:</span> {exp.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="terminal-window">
+              <div className="terminal-header">
+                <div className="terminal-button terminal-button-red"></div>
+                <div className="terminal-button terminal-button-yellow"></div>
+                <div className="terminal-button terminal-button-green"></div>
+                <div className="terminal-title">experience.sh</div>
+              </div>
+              <div className="terminal-content">
+                <p className="mb-4">
+                  <span className="text-primary">$</span> cat experience_timeline.txt
+                </p>
+                <Timeline items={experiences} />
+              </div>
             </div>
           </section>
 

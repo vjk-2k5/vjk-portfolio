@@ -14,13 +14,18 @@ export function Navigation() {
     { name: "about", path: "/about" },
   ]
 
+  const socialLinks = [
+    { name: "github", url: "https://github.com/vjk-2k5" },
+    { name: "linkedin", url: "https://linkedin.com/in/vijay-krishna-s" },
+  ]
+
   return (
     <header className="border-b border-border/40 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           {/* Update the logo text */}
-          <Link href="/" className="text-xl font-bold text-primary glitch" data-text="VIJAY_DEV">
-            VIJAY_DEV
+          <Link href="/" className="text-xl font-bold text-primary glitch" data-text="VIJAY_KRISHNA_DEV">
+            VIJAY_KRISHNA_DEV
           </Link>
 
           {/* Mobile menu button */}
@@ -42,6 +47,18 @@ export function Navigation() {
                 </Link>
               </li>
             ))}
+            {socialLinks.map((link) => (
+              <li key={link.url}>
+                <Link
+                  href={link.url}
+                  className="command-prompt text-white hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
@@ -59,6 +76,19 @@ export function Navigation() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
+                  </Link>
+                </li>
+              ))}
+              {socialLinks.map((link) => (
+                <li key={link.url}>
+                  <Link
+                    href={link.url}
+                    className="command-prompt block text-white hover:text-primary transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
                   </Link>
                 </li>
               ))}

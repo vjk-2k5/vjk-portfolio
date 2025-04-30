@@ -13,9 +13,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 // Update the metadata
 export const metadata: Metadata = {
-  title: "Vijay Krishna S | Cyberpunk Portfolio",
+  title: "Vijay Krishna S Portfolio",
   description: "Tech-savvy innovator with hands-on experience in emerging technologies",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

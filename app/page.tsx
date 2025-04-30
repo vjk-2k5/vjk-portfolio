@@ -75,13 +75,25 @@ export default function Home() {
         />
 
         {introComplete && (
-          <div className="mt-8 flex justify-center">
+          <div className="mt-12 text-center space-y-4">
+            <p className="text-sm text-primary/80 uppercase tracking-wider font-semibold animate-pulse">
+              Dive into my cybernetic portfolio
+            </p>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-md transition-colors border border-primary/30"
+              className="inline-flex items-center gap-3 bg-primary/10 hover:bg-primary/20 text-primary px-6 py-3 rounded-md
+                       transition-all duration-300 border border-primary/30
+                       hover:border-primary/50 hover:scale-105 hover:shadow-[0_0_20px_0px_rgba(var(--primary),.2)]
+                       group relative overflow-hidden"
             >
-              Learn more about me <ArrowRight size={16} />
+              <span className="relative z-10">Explore My Digital Universe</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0
+                            translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
             </Link>
+            <p className="text-sm text-gray-400 mt-2">
+              Discover my journey, achievements , and tech expertise
+            </p>
           </div>
         )}
       </section>
@@ -135,6 +147,29 @@ export default function Home() {
               <p className="text-muted-foreground">{win.description}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-16 text-center border-t border-primary/20 mt-16 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent opacity-50"></div>
+        <div className="relative">
+          <h2 className="text-2xl font-bold mb-4">Want to know more?</h2>
+          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+            From AI innovations to hackathon victories, my full story awaits. Ready to explore the complete chronicle of my tech journey?
+          </p>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-md
+                     transition-all duration-300 hover:scale-105
+                     shadow-[0_0_20px_0px_rgba(var(--primary),.3)]
+                     hover:shadow-[0_0_30px_0px_rgba(var(--primary),.4)]
+                     group relative overflow-hidden"
+          >
+            <span className="relative z-10 font-semibold">Unlock My Full Portfolio</span>
+            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent
+                          translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+          </Link>
         </div>
       </section>
     </div>
