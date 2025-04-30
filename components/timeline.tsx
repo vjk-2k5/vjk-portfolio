@@ -13,19 +13,59 @@ interface TimelineProps {
 
 export function Timeline({ items }: TimelineProps) {
   return (
-    <div className="relative">
-      {/* Vertical line with enhanced cyberpunk glow */}
-      <div className="absolute left-8 top-4 h-[calc(100%-2rem)] w-1 bg-gradient-to-b from-primary/80 via-primary/50 to-primary/80 glow-line rounded-full" />
+    <div className="grid grid-cols-[48px_1fr] gap-4">
+      {/* Timeline line and dots container */}
+      <div className="relative">
+        {/* Vertical line with enhanced cyberpunk glow and particle effects */}
+        <div className="absolute left-8 top-4 h-[calc(100%-2rem)] w-1 -translate-x-1/2">
+          {/* Main gradient line */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/50 to-primary/80 rounded-full glow-line" />
+          
+          {/* Particle effects along the line */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-primary rounded-full
+                         animate-particle opacity-0"
+                style={{
+                  animationDelay: `${i * 2}s`,
+                  left: '50%',
+                  transform: 'translateX(-50%)'
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Timeline items */}
       <div className="space-y-12">
         {items.map((item, index) => (
-          <div key={index} className="relative pl-20 group">
-            {/* Glowing dot with pulse effect */}
-            <div className="absolute left-8 top-8 w-4 h-4 rounded-full bg-primary transform -translate-x-1/2 -translate-y-1/2
-                          shadow-[0_0_15px_5px_rgba(var(--primary),.3)]
-                          group-hover:shadow-[0_0_20px_8px_rgba(var(--primary),.5)]
-                          animate-pulse transition-shadow duration-300" />
+          <div key={index} className="relative group">
+            {/* Enhanced glowing dot with ripple effect */}
+            <div className="absolute -left-10 top-8 -translate-y-1/2">
+              {/* Core dot */}
+              <div className="relative w-4 h-4">
+                {/* Main dot with glow */}
+                <div className="absolute inset-0 rounded-full bg-primary z-20
+                              shadow-[0_0_15px_5px_rgba(var(--primary),.3)]
+                              group-hover:shadow-[0_0_20px_8px_rgba(var(--primary),.5)]
+                              transition-all duration-300" />
+                
+                {/* Ripple effects */}
+                <div className="absolute inset-0 rounded-full border-2 border-primary/30 z-10
+                              animate-ripple-1 group-hover:border-primary/50" />
+                <div className="absolute inset-0 rounded-full border-2 border-primary/20 z-10
+                              animate-ripple-2 group-hover:border-primary/40" />
+                
+                {/* Inner bright core */}
+                <div className="absolute inset-2 rounded-full bg-primary z-30
+                              shadow-[0_0_8px_2px_rgba(var(--primary),.4)]
+                              group-hover:shadow-[0_0_12px_3px_rgba(var(--primary),.6)]
+                              transition-all duration-300" />
+              </div>
+            </div>
 
             {/* Content card with enhanced cyberpunk style */}
             <div className="relative p-8 bg-black/80 border border-primary/30 rounded-lg
