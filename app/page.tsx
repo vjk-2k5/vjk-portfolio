@@ -35,14 +35,14 @@ export default function Home() {
       id: "sports-league",
       title: "Sports League Management",
       description: "Comprehensive system for managing teams, leagues, and player statistics with real-time updates.",
-      image: "/placeholder.svg",
+      image: "/sportsleague.png",
       technologies: ["React", "Next.js", "Database"],
     },
     {
       id: "legal-cases",
       title: "Legal Cases Management",
       description: "Platform for efficient management of legal cases, documents, and client information for law firms.",
-      image: "/placeholder.svg",
+      image: "/legalcases.png",
       technologies: ["TypeScript", "Next.js", "PostgreSQL"],
     },
   ]
