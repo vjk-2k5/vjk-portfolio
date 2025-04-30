@@ -35,7 +35,7 @@ export default function AboutPage() {
     degree: "B.Tech in Information Technology",
     institution: "College of Engineering Guindy – Anna University",
     period: "Expected May 2027",
-    gpa: "8.3",
+    gpa: "8.4",
     roles: ["NSS Member", "Tech Head @ Anna University Entrepreneurship Club"],
   }
 
@@ -43,31 +43,31 @@ export default function AboutPage() {
     {
       name: "ITRIX 2025",
       project: "Vision Solve AI Platform",
-      venue: "CEG",
+      conductedBy: "CEG - Anna University - National Level",
       achievement: "Winner - Secured Internship Opportunities",
     },
     {
       name: "Nexathon 2025",
       project: "Sixth Sense AI Voice Assistant",
-      venue: "VIT Chennai",
+      conductedBy: "VIT Chennai - National Level",
       achievement: "Semi-Finalist",
     },
     {
       name: "Smart India Hackathon 2024",
       project: "AI Job Recommender",
-      venue: "Govt. of India",
+      conductedBy: "Government of India - National Level",
       achievement: "Semi-Finalist",
     },
     {
       name: "ITRIX 2024",
       project: "Solar Energy Project",
-      venue: "CEG",
+      conductedBy: "IT dept. of Anna University - State Level",
       achievement: "Special Mention",
     },
     {
       name: "Sparkathon 2024",
       project: "Healthcare system with AI ",
-      venue: "CEG",
+      conductedBy: "IT dept. of Anna University",
       achievement: "Runners Up",
     },
 
@@ -219,7 +219,7 @@ export default function AboutPage() {
                         <span className="text-primary">project:</span> {hackathon.project}
                       </p>
                       <p>
-                        <span className="text-primary">venue:</span> {hackathon.venue}
+                        <span className="text-primary">Conducted by:</span> {hackathon.conductedBy}
                       </p>
                       <p>
                         <span className="text-primary">achievement:</span> {hackathon.achievement}
