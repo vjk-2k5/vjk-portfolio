@@ -13,7 +13,7 @@ export default function AboutPage() {
   const experiences = [
     {
       year: "Mar 2025 - Present",
-      title: "CEO & Founder",
+      title: "Co-Founder",
       company: "Vision Solve AI",
       description: "After winning ITRIX '25, engaged with users to build an AI video generation platform with a comprehensive study ecosystem including quizzes, mindmaps, and other features. Currently preparing for public release.",
     },
